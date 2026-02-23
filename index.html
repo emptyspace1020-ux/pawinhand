@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>포인핸드1</title>
+    <title>포인핸드</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
@@ -19,7 +19,6 @@
         <header id="header">
             <div class="inner">
                 <h1 class="logo"><a href="#">pawinhand</a></h1>
-
                 <nav class="gnb">
                     <ul class="main_menu">
                         <li>
@@ -75,8 +74,8 @@
                                 <li><a href="#">1:1문의</a></li>
                             </ul>
                         </li>
-                    </ul>
-                </nav>
+                    </ul><!-- //.main_menu -->
+                </nav><!-- //.gnb -->
 
                 <div class="util">
                     <div class="util_search_group">
@@ -185,10 +184,10 @@
                         <div class="banner_btn">
                             <a href="#" class="btn_primary">입양공고 보기</a>
                             <a href="#" class="btn_secondary">보호소 찾기</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                        </div><!-- //.banner_btn -->
+                    </div><!-- //.banner_text -->
+                </div><!-- //.inner -->
+            </section><!-- //.main_banner -->
 
             <section class="recommend">
                 <div class="inner">
@@ -197,22 +196,22 @@
                             <div class="title_row">
                                 <h2 class="title_heading">당신을 위한 추천</h2>
                                 <span class="vector" aria-hidden="true"></span>
-                            </div>
+                            </div><!-- //.title_row -->
                             <p class="title_sub">포인핸드가 선정한 입양동물을 보여드려요.</p>
-                        </div>
+                        </div><!-- //.title_wrap -->
 
                         <div class="bottom_btn">
                             <a href="#" class="more_btn">
                                 <span class="more_text">입양공고 더보기</span>
                                 <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                            </a><!-- //.more_btn-->
 
                             <div class="slide_btn">
                                 <button type="button" class="prev"><i class="fa-solid fa-angle-left"></i></button>
                                 <button type="button" class="next"><i class="fa-solid fa-angle-right"></i></button>
-                            </div>
-                        </div>
-                    </div>
+                            </div><!-- //.slide_btn -->
+                        </div><!-- //.bottom_btn -->
+                    </div><!-- //.block_title -->
 
                     <div class="recommend_list">
                         <div class="recommend_track">
@@ -239,7 +238,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </a><!-- //.card01 -->
 
                             <a href="#" class="card card02">
                                 <div class="img_box">
@@ -264,7 +263,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </a><!-- //.card02 -->
 
                             <a href="#" class="card card03">
                                 <div class="img_box">
@@ -289,7 +288,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </a><!-- //.card03 -->
 
                             <a href="#" class="card card04">
                                 <div class="img_box">
@@ -314,7 +313,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </a><!-- //.card04 -->
 
                             <a href="#" class="card card05">
                                 <div class="img_box">
@@ -339,7 +338,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </a><!-- //.card05 -->
 
                             <a href="#" class="card card06">
                                 <div class="img_box">
@@ -364,7 +363,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </a><!-- //.card06 -->
 
                             <a href="#" class="card card07">
                                 <div class="img_box">
@@ -389,12 +388,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
+                            </a><!-- //.card07 -->
+                        </div><!-- //.recommend_track -->
+                    </div><!-- //.recommend_list -->
+                </div><!-- //.inner -->
+            </section><!-- //.recommend -->
 
             <section class="search" id="search">
                 <div class="inner">
@@ -404,7 +402,7 @@
                         <div class="bottom">
                             <p class="search_sub">원하는 조건을 선택해 직접 검색해보세요.</p>
                         </div>
-                    </div>
+                    </div><!-- //.search_title -->
 
                     <div class="search_area">
                         <div class="search_box" role="group" aria-label="입양동물 검색 조건">
@@ -435,10 +433,9 @@
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
                             </button>
-                        </div>
+                        </div><!-- //.search_fields -->
 
                         <div class="search_overlay" aria-hidden="true"></div>
-
                         <div class="search_dropdown" id="searchDropdown" aria-hidden="true">
                             <div class="dropdown_inner">
                                 <div class="dropdown_panel" data-panel="species" hidden>
@@ -451,7 +448,7 @@
                                         <button type="button" class="option_btn" data-set="species"
                                             data-label="기타">기타</button>
                                     </div>
-                                </div>
+                                </div><!-- //.species -->
 
                                 <div class="dropdown_panel" data-panel="region" hidden>
                                     <p class="dropdown_title">지역 선택</p>
@@ -464,35 +461,35 @@
                                                 <button type="button" class="region_clear" id="regionSearchClear"
                                                     aria-label="검색어 지우기">×</button>
                                             </div>
-                                        </div>
+                                        </div><!-- //.region_top -->
 
                                         <div class="region_grid">
                                             <div class="region_col">
                                                 <div class="region_col_title">시/도</div>
                                                 <ul class="region_list" id="regionSidoList" role="listbox"
                                                     aria-label="시도 선택"></ul>
-                                            </div>
+                                            </div><!-- //.region_col -->
 
                                             <div class="region_col">
                                                 <div class="region_col_title">시/군/구</div>
                                                 <div class="region_gu_wrap" id="regionGuWrap"></div>
-                                            </div>
-                                        </div>
+                                            </div><!-- //.region_col -->
+                                        </div><!-- //.region_grid -->
 
                                         <div class="region_footer">
                                             <div class="region_footer_left">
                                                 <div class="region_selected" id="regionSelectedSummary"></div>
                                                 <div class="region_hint" id="regionLimitHint"></div>
-                                            </div>
+                                            </div><!-- //.region_footer_left -->
                                             <div class="region_actions">
                                                 <button type="button" class="region_btn ghost"
                                                     id="regionResetBtn">초기화</button>
                                                 <button type="button" class="region_btn primary" id="regionApplyBtn"
                                                     disabled>다음 단계로 이동</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                            </div><!-- //.region_actions -->
+                                        </div><!-- //.region_footer -->
+                                    </div><!-- //. -->
+                                </div><!-- //.region -->
 
                                 <div class="dropdown_panel" data-panel="condition" hidden>
                                     <p class="dropdown_title">조건 선택</p>
@@ -509,8 +506,8 @@
                                                     <input type="checkbox" data-group="sex" value="암컷">
                                                     <span>암컷</span>
                                                 </label>
-                                            </div>
-                                        </div>
+                                            </div><!-- //.condition_options -->
+                                        </div><!-- //.condition_group -->
 
                                         <div class="condition_group">
                                             <div class="condition_group_title">나이</div>
@@ -531,8 +528,8 @@
                                                     <input type="checkbox" data-group="age" value="8살 이상">
                                                     <span>8살 이상</span>
                                                 </label>
-                                            </div>
-                                        </div>
+                                            </div><!-- //.condition_options -->
+                                        </div><!-- //.condition_group -->
 
                                         <div class="condition_footer">
                                             <div class="condition_footer_left">
@@ -543,15 +540,15 @@
                                                     id="conditionResetBtn">초기화</button>
                                                 <button type="button" class="region_btn primary" id="conditionApplyBtn"
                                                     disabled>조건으로 찾기</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                                            </div><!-- //.condition_actions -->
+                                        </div><!-- //.condition_footer -->
+                                    </div><!-- //.condition_panel -->
+                                </div><!-- //.condition -->
+                            </div><!-- //.dropdown_inner -->
+                        </div><!-- //.search_dropdown -->
+                    </div><!-- //.search_area -->
+                </div><!-- //.inner -->
+            </section><!-- //.search -->
 
             <section class="adoption_stories">
                 <div class="inner">
@@ -563,7 +560,7 @@
                             </div>
                             <p class="title_sub">입양 후 이렇게 달라졌어요.</p>
                         </div>
-                    </div>
+                    </div><!-- //.block_title -->
 
                     <div class="blog">
                         <div class="line01">
@@ -595,8 +592,8 @@
                                             <img src="asset/img/thumb01.jpg" alt="몰티">
                                         </div>
                                     </a>
-                                </article>
-                            </div>
+                                </article><!-- //.story_card -->
+                            </div><!-- //.story_item -->
 
                             <div class="story_item">
                                 <article class="story_card">
@@ -631,9 +628,9 @@
                                             <img src="asset/img/thumb02.png" alt="">
                                         </div>
                                     </a>
-                                </article>
-                            </div>
-                        </div>
+                                </article><!-- //.story_card -->
+                            </div><!-- //.story_item -->
+                        </div><!-- //.line01 -->
 
                         <div class="line02">
                             <div class="story_item">
@@ -668,8 +665,8 @@
                                             <img src="asset/img/thumb03.jpg" alt="">
                                         </div>
                                     </a>
-                                </article>
-                            </div>
+                                </article><!-- //.story_card -->
+                            </div><!-- //.story_item -->
 
                             <div class="story_item">
                                 <article class="story_card">
@@ -701,10 +698,10 @@
                                             <img src="asset/img/thumb04.jpg" alt="썸네일">
                                         </div>
                                     </a>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
+                                </article><!-- //.story_card -->
+                            </div><!-- //.story_item -->
+                        </div><!-- //.line02 -->
+                    </div><!-- //.blog -->
 
                     <div class="btn">
                         <a href="#" class="more_btn">
@@ -713,7 +710,8 @@
                         </a>
                     </div>
                 </div>
-            </section>
+            </section><!-- //.adoption_stories -->
+
             <section class="company">
                 <div class="inner">
                     <div class="block_title">
@@ -724,7 +722,7 @@
                             </div>
                             <p class="title_sub">기술과 진심으로 유기동물 입양의 기준을 만들어갑니다.</p>
                         </div>
-                    </div>
+                    </div><!-- //.block_title -->
 
                     <div class="com_slide">
                         <div class="com_item com_item_01">
@@ -738,7 +736,7 @@
                                     </div>
                                 </div>
                             </button>
-                        </div>
+                        </div><!-- //.com_item_01 -->
 
                         <div class="com_item com_item_02">
                             <button type="button" class="com_btn">
@@ -751,7 +749,7 @@
                                     </div>
                                 </div>
                             </button>
-                        </div>
+                        </div><!-- //.com_item_02 -->
 
                         <div class="com_item com_item_03">
                             <button type="button" class="com_btn">
@@ -764,7 +762,7 @@
                                     </div>
                                 </div>
                             </button>
-                        </div>
+                        </div><!-- //.com_item_03 -->
 
                         <div class="com_item com_item_04">
                             <button type="button" class="com_btn">
@@ -777,7 +775,7 @@
                                     </div>
                                 </div>
                             </button>
-                        </div>
+                        </div><!-- //.com_item_04 -->
 
                         <div class="com_item com_item_05">
                             <button type="button" class="com_btn">
@@ -790,12 +788,14 @@
                                     </div>
                                 </div>
                             </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                        </div><!-- //.com_item_05 -->
+                    </div><!-- //.com_slide -->
+                </div><!-- //.inner -->
+            </section><!-- //.company -->
+
             <footer id="footer">
                 <div class="inner">
+
                     <div class="footer_inner">
                         <div class="footer_left">
                             <h2 class="logo"><a href="#">pawinhand</a></h2>
@@ -803,12 +803,12 @@
                                 <p><span>대표자</span> 이환희 | <span>사업자번호</span> 322-87-00895</p>
                                 <p><span>주소</span> 서울특별시 마포구 대흥로 67</p>
                                 <p><span>데이터 제공</span> 농림축산식품부</p>
-                            </div>
+                            </div><!-- //.company_info -->
                             <div class="footer_contact">
                                 <p><span>이메일</span> pawinhand@naver.com</p>
                                 <p><span>대표전화</span> 02-6956-6242</p>
-                            </div>
-                        </div>
+                            </div><!-- //.footer_contact -->
+                        </div><!-- //.footer_left -->
                         <div class="footer_right">
                             <div class="footer_sns">
                                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -816,21 +816,22 @@
                                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
                                 <a href="#"><i class="fa-solid fa-comment"></i></a>
                                 <a href="#"><i class="fa-solid fa-bold"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                            </div><!-- //.footer_sns -->
+                        </div><!-- //.footer_right -->
+                    </div><!-- //.footer_inner -->
+
                     <div class="footer_bottom">
                         <div class="bottom_inner">
                             <div class="bottom_left">
                                 <a href="#" class="policy">개인정보처리방침</a>
                                 <p class="copy">©Pawinhand all right reserved.</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </div><!-- //.bottom_inner -->
+                    </div><!-- //.footer_bottom -->
+                </div><!-- //.inner -->
             </footer>
         </main>
-    </div>
+    </div><!-- //.wrap -->
 
     <script src="js/common.js"></script>
 </body>
