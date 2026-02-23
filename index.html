@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포인핸드</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="inner">
+                <h1 class="logo"><a href="#">pawinhand</a></h1>
+
+                <nav class="gnb">
+                    <ul class="main_menu">
+                        <li>
+                            <a href="#">포인핸드</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">회사소개</a></li>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">운영보고</a></li>
+                                <li><a href="#">매거진</a></li>
+                                <li><a href="#">굿즈</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">입양하기</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">입양공고</a></li>
+                                <li><a href="#">보호소찾기</a></li>
+                                <li><a href="#">입양가이드</a></li>
+                                <li><a href="#">입양혜택</a></li>
+                                <li><a href="#">유기동물 통계</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">실종제보</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">실종신고</a></li>
+                                <li><a href="#">목격제보</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">커뮤니티</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">입양후기</a></li>
+                                <li><a href="#">입양홍보</a></li>
+                                <li><a href="#">자유게시판</a></li>
+                                <li><a href="#">질문답변</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">참여지원</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">봉사활동</a></li>
+                                <li><a href="#">후원하기</a></li>
+                                <li><a href="#">진행중 기부</a></li>
+                                <li><a href="#">기부후기</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">문의사항</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">1:1문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="util">
+                    <div class="util_search_group">
+                        <label class="sr_only" for="utilSearchInput">검색</label>
+                        <div class="util_search" id="utilSearch" aria-hidden="true">
+                            <input id="utilSearchInput" class="util_search_input" type="text" placeholder="검색어를 입력하세요"
+                                aria-label="검색어를 입력하세요">
+                        </div>
+                        <button type="button" class="util_btn util_btn_search" id="utilSearchToggle"
+                            aria-expanded="false" aria-controls="utilSearch" aria-label="검색 열기">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <a href="#" aria-label="mypage">
+                        <i class="fa-solid fa-user"></i>
+                    </a><!-- //.mypage -->
+                    <button class="menu_btn" aria-label="menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button><!-- //.menu_btn -->
+                </div>
+            </div>
+
+            <div class="gnb_bg"></div>
+            <div class="menu_overlay" id="menuoverlay" aria-hidden="true">
+                <div class="menu_panel" role="dialog" aria-modal="true" aria-label="전체메뉴">
+                    <div class="menu_panel_inner">
+                        <h2 class="menu_title">전체메뉴</h2>
+                        <nav class="menu_nav" aria-label="전체메뉴">
+                            <ul class="menu_grid">
+                                <li class="menu_group">
+                                    <a href="#" class="menu_group_title">포인핸드</a>
+                                    <ul class="menu_group_list">
+                                        <li><a href="#">회사소개</a></li>
+                                        <li><a href="#">공지사항</a></li>
+                                        <li><a href="#">운영보고</a></li>
+                                        <li><a href="#">매거진</a></li>
+                                        <li><a href="#">굿즈</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu_group">
+                                    <a href="#" class="menu_group_title">입양하기</a>
+                                    <ul class="menu_group_list">
+                                        <li><a href="#">입양공고</a></li>
+                                        <li><a href="#">보호소찾기</a></li>
+                                        <li><a href="#">입양가이드</a></li>
+                                        <li><a href="#">입양혜택</a></li>
+                                        <li><a href="#">유기동물 통계</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu_group">
+                                    <a href="#" class="menu_group_title">실종제보</a>
+                                    <ul class="menu_group_list">
+                                        <li><a href="#">실종신고</a></li>
+                                        <li><a href="#">목격제보</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu_group">
+                                    <a href="#" class="menu_group_title">커뮤니티</a>
+                                    <ul class="menu_group_list">
+                                        <li><a href="#">입양후기</a></li>
+                                        <li><a href="#">입양홍보</a></li>
+                                        <li><a href="#">자유게시판</a></li>
+                                        <li><a href="#">질문답변</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu_group">
+                                    <a href="#" class="menu_group_title">참여지원</a>
+                                    <ul class="menu_group_list">
+                                        <li><a href="#">봉사활동</a></li>
+                                        <li><a href="#">후원하기</a></li>
+                                        <li><a href="#">진행중 기부</a></li>
+                                        <li><a href="#">기부후기</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu_group">
+                                    <a href="#" class="menu_group_title">문의사항</a>
+                                    <ul class="menu_group_list">
+                                        <li><a href="#">공지사항</a></li>
+                                        <li><a href="#">FAQ</a></li>
+                                        <li><a href="#">1:1문의</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="container">
+            <section class="main_banner">
+                <img class="banner_bg" src="asset/img/main_banner.png" alt="강아지">
+                <div class="inner">
+                    <div class="banner_text">
+                        <h2>
+                            유기동물과 새로운 가족을<br>
+                            연결하는 플랫폼
+                        </h2>
+                        <p>입양 · 실종 · 보호소 정보까지 전국 데이터를 기반으로 제공합니다.</p>
+                        <div class="banner_btn">
+                            <a href="#" class="btn_primary">입양공고 보기</a>
+                            <a href="#" class="btn_secondary">보호소 찾기</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recommend">
+                <div class="inner">
+                    <div class="block_title">
+                        <div class="title_wrap">
+                            <div class="title_row">
+                                <h2 class="title_heading">당신을 위한 추천</h2>
+                                <span class="vector" aria-hidden="true"></span>
+                            </div>
+                            <p class="title_sub">포인핸드가 선정한 입양동물을 보여드려요.</p>
+                        </div>
+
+                        <div class="bottom_btn">
+                            <a href="#" class="more_btn">
+                                <span class="more_text">입양공고 더보기</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                            <div class="slide_btn">
+                                <button type="button" class="prev"><i class="fa-solid fa-angle-left"></i></button>
+                                <button type="button" class="next"><i class="fa-solid fa-angle-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommend_list">
+                        <div class="recommend_track">
+                            <a href="#" class="card card01">
+                                <div class="img_box">
+                                    <img src="asset/img/img_box01.png" alt="진저">
+                                    <div class="heart"><i class="fa-regular fa-heart"></i></div>
+                                </div>
+                                <div class="card_inner">
+                                    <div class="card_box">
+                                        <div class="title">
+                                            <div class="detail"><span>코리안숏헤어</span></div>
+                                            <div class="tit"><strong>진저</strong></div>
+                                        </div>
+                                        <div class="location">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span>서울동물병원</span>
+                                        </div>
+                                        <div class="tag">
+                                            <span class="tag_box">수컷</span>
+                                            <span class="tag_box">치즈</span>
+                                            <span class="tag_box">2022년생</span>
+                                            <span class="tag_box">5kg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="card card02">
+                                <div class="img_box">
+                                    <img src="asset/img/img_box02.png" alt="맥스">
+                                    <div class="heart"><i class="fa-regular fa-heart"></i></div>
+                                </div>
+                                <div class="card_inner">
+                                    <div class="card_box">
+                                        <div class="title">
+                                            <div class="detail"><span>닥스훈트</span></div>
+                                            <div class="tit"><strong>맥스</strong></div>
+                                        </div>
+                                        <div class="location">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span>서울동물병원</span>
+                                        </div>
+                                        <div class="tag">
+                                            <span class="tag_box">수컷</span>
+                                            <span class="tag_box">검정색</span>
+                                            <span class="tag_box">2025년생</span>
+                                            <span class="tag_box">4kg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="card card03">
+                                <div class="img_box">
+                                    <img src="asset/img/img_box03.png" alt="키코">
+                                    <div class="heart"><i class="fa-regular fa-heart"></i></div>
+                                </div>
+                                <div class="card_inner">
+                                    <div class="card_box">
+                                        <div class="title">
+                                            <div class="detail"><span>진돗개</span></div>
+                                            <div class="tit"><strong>키코</strong></div>
+                                        </div>
+                                        <div class="location">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span>노원구 댕댕하우스</span>
+                                        </div>
+                                        <div class="tag">
+                                            <span class="tag_box">암컷</span>
+                                            <span class="tag_box">노란색</span>
+                                            <span class="tag_box">2024년생</span>
+                                            <span class="tag_box">7kg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="card card04">
+                                <div class="img_box">
+                                    <img src="asset/img/img_box04.png" alt="아이">
+                                    <div class="heart"><i class="fa-regular fa-heart"></i></div>
+                                </div>
+                                <div class="card_inner">
+                                    <div class="card_box">
+                                        <div class="title">
+                                            <div class="detail"><span>코리안숏헤어</span></div>
+                                            <div class="tit"><strong>아이</strong></div>
+                                        </div>
+                                        <div class="location">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span>남양주시동물보호센터</span>
+                                        </div>
+                                        <div class="tag">
+                                            <span class="tag_box">암컷</span>
+                                            <span class="tag_box">갈색</span>
+                                            <span class="tag_box">2024년생</span>
+                                            <span class="tag_box">7kg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="card card05">
+                                <div class="img_box">
+                                    <img src="asset/img/img_box05.png" alt="사랑이">
+                                    <div class="heart"><i class="fa-regular fa-heart"></i></div>
+                                </div>
+                                <div class="card_inner">
+                                    <div class="card_box">
+                                        <div class="title">
+                                            <div class="detail"><span>말티즈</span></div>
+                                            <div class="tit"><strong>사랑이</strong></div>
+                                        </div>
+                                        <div class="location">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span>가평군유기동물보호소</span>
+                                        </div>
+                                        <div class="tag">
+                                            <span class="tag_box">수컷</span>
+                                            <span class="tag_box">크림색</span>
+                                            <span class="tag_box">2020년생</span>
+                                            <span class="tag_box">4kg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="card card06">
+                                <div class="img_box">
+                                    <img src="asset/img/img_box06.png" alt="오레오">
+                                    <div class="heart"><i class="fa-regular fa-heart"></i></div>
+                                </div>
+                                <div class="card_inner">
+                                    <div class="card_box">
+                                        <div class="title">
+                                            <div class="detail"><span>코리안숏헤어</span></div>
+                                            <div class="tit"><strong>오레오</strong></div>
+                                        </div>
+                                        <div class="location">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span>밀양시 동물보호센터</span>
+                                        </div>
+                                        <div class="tag">
+                                            <span class="tag_box">암컷</span>
+                                            <span class="tag_box">턱시도</span>
+                                            <span class="tag_box">2026년생</span>
+                                            <span class="tag_box">2kg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="card card07">
+                                <div class="img_box">
+                                    <img src="asset/img/img_box07.png" alt="토순이">
+                                    <div class="heart"><i class="fa-regular fa-heart"></i></div>
+                                </div>
+                                <div class="card_inner">
+                                    <div class="card_box">
+                                        <div class="title">
+                                            <div class="detail"><span>토끼</span></div>
+                                            <div class="tit"><strong>토순이</strong></div>
+                                        </div>
+                                        <div class="location">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span>밀양시 동물보호센터</span>
+                                        </div>
+                                        <div class="tag">
+                                            <span class="tag_box">암컷</span>
+                                            <span class="tag_box">크림색</span>
+                                            <span class="tag_box">2022년생</span>
+                                            <span class="tag_box">2kg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="search" id="search">
+                <div class="inner">
+                    <div class="search_title">
+                        <h2 class="search_heading"><span class="reveal_line">마음에 드는 입양동물을</span><br><span
+                                class="reveal_line">찾지 못하셨나요?</span></h2>
+                        <div class="bottom">
+                            <p class="search_sub">원하는 조건을 선택해 직접 검색해보세요.</p>
+                        </div>
+                    </div>
+
+                    <div class="search_area">
+                        <div class="search_box" role="group" aria-label="입양동물 검색 조건">
+                            <button type="button" class="search_field" data-filter="species" aria-expanded="false"
+                                aria-controls="searchDropdown">
+                                <span class="field_label">함께할 아이</span>
+                                <span class="field_value" data-value="species">종 선택</span>
+                            </button>
+
+                            <div class="vertical_divider" aria-hidden="true"></div>
+
+                            <button type="button" class="search_field" data-filter="region" aria-expanded="false"
+                                aria-controls="searchDropdown">
+                                <span class="field_label">지역 설정</span>
+                                <span class="field_value" data-value="region">근처 보호소 찾기</span>
+                            </button>
+
+                            <div class="vertical_divider" aria-hidden="true"></div>
+
+                            <button type="button" class="search_field" data-filter="condition" aria-expanded="false"
+                                aria-controls="searchDropdown">
+                                <span class="field_label">조건 설정</span>
+                                <span class="field_value" data-value="condition">성별 · 나이</span>
+                            </button>
+
+                            <button type="button" class="search_btn" aria-label="검색">
+                                <span class="btn_box">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                            </button>
+                        </div>
+
+                        <div class="search_overlay" aria-hidden="true"></div>
+
+                        <div class="search_dropdown" id="searchDropdown" aria-hidden="true">
+                            <div class="dropdown_inner">
+                                <div class="dropdown_panel" data-panel="species" hidden>
+                                    <p class="dropdown_title">종 선택</p>
+                                    <div class="dropdown_grid">
+                                        <button type="button" class="option_btn" data-set="species"
+                                            data-label="강아지">강아지</button>
+                                        <button type="button" class="option_btn" data-set="species"
+                                            data-label="고양이">고양이</button>
+                                        <button type="button" class="option_btn" data-set="species"
+                                            data-label="기타">기타</button>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown_panel" data-panel="region" hidden>
+                                    <p class="dropdown_title">지역 선택</p>
+                                    <div class="region_panel">
+                                        <div class="region_top">
+                                            <div class="region_search">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                                <input id="regionsearchinput" type="text" placeholder="지역명, 구, 동 검색"
+                                                    autocomplete="off">
+                                                <button type="button" class="region_clear" id="regionSearchClear"
+                                                    aria-label="검색어 지우기">×</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="region_grid">
+                                            <div class="region_col">
+                                                <div class="region_col_title">시/도</div>
+                                                <ul class="region_list" id="regionSidoList" role="listbox"
+                                                    aria-label="시도 선택"></ul>
+                                            </div>
+
+                                            <div class="region_col">
+                                                <div class="region_col_title">시/군/구</div>
+                                                <div class="region_gu_wrap" id="regionGuWrap"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="region_footer">
+                                            <div class="region_footer_left">
+                                                <div class="region_selected" id="regionSelectedSummary"></div>
+                                                <div class="region_hint" id="regionLimitHint"></div>
+                                            </div>
+                                            <div class="region_actions">
+                                                <button type="button" class="region_btn ghost"
+                                                    id="regionResetBtn">초기화</button>
+                                                <button type="button" class="region_btn primary" id="regionApplyBtn"
+                                                    disabled>다음 단계로 이동</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown_panel" data-panel="condition" hidden>
+                                    <p class="dropdown_title">조건 선택</p>
+
+                                    <div class="condition_panel">
+                                        <div class="condition_group">
+                                            <div class="condition_group_title">성별</div>
+                                            <div class="condition_options condition_row">
+                                                <label class="cond_chip">
+                                                    <input type="checkbox" data-group="sex" value="수컷">
+                                                    <span>수컷</span>
+                                                </label>
+                                                <label class="cond_chip">
+                                                    <input type="checkbox" data-group="sex" value="암컷">
+                                                    <span>암컷</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="condition_group">
+                                            <div class="condition_group_title">나이</div>
+                                            <div class="condition_options condition_grid">
+                                                <label class="cond_chip">
+                                                    <input type="checkbox" data-group="age" value="1살 미만">
+                                                    <span>1살 미만</span>
+                                                </label>
+                                                <label class="cond_chip">
+                                                    <input type="checkbox" data-group="age" value="1~3살">
+                                                    <span>1~3살</span>
+                                                </label>
+                                                <label class="cond_chip">
+                                                    <input type="checkbox" data-group="age" value="4~7살">
+                                                    <span>4~7살</span>
+                                                </label>
+                                                <label class="cond_chip">
+                                                    <input type="checkbox" data-group="age" value="8살 이상">
+                                                    <span>8살 이상</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="condition_footer">
+                                            <div class="condition_footer_left">
+                                                <div class="condition_selected" id="conditionSelectedSummary"></div>
+                                            </div>
+                                            <div class="condition_actions">
+                                                <button type="button" class="region_btn ghost"
+                                                    id="conditionResetBtn">초기화</button>
+                                                <button type="button" class="region_btn primary" id="conditionApplyBtn"
+                                                    disabled>조건으로 찾기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="adoption_stories">
+                <div class="inner">
+                    <div class="block_title">
+                        <div class="title_wrap">
+                            <div class="title_row">
+                                <h2 class="title_heading">입양 스토리</h2>
+                                <span class="vector" aria-hidden="true"></span>
+                            </div>
+                            <p class="title_sub">입양 후 이렇게 달라졌어요.</p>
+                        </div>
+                    </div>
+
+                    <div class="blog">
+                        <div class="line01">
+                            <div class="story_item">
+                                <article class="story_card">
+                                    <a class="card_link" href="#">
+                                        <div class="card_text">
+                                            <div class="profile">
+                                                <span class="profile_img" aria-hidden="true"></span>
+                                                <div class="profile_info">
+                                                    <strong class="name">몰티누나</strong>
+                                                    <span class="sub">사지말고 입양하세요.</span>
+                                                </div>
+                                            </div>
+
+                                            <h3 class="title">사랑스러운 강아지❤️</h3>
+                                            <p class="desc">15년생 말티즈지만 최강 동안을 자랑하는 귀염둥이 몰티 양 쪽 백내장과 수정체 탈구가있던 친구지만 씩씩하게
+                                                수술도 견뎌내고 폭풍회복중인 귀염둥이 몰티 짖지도 못하는 초초순딩 말티인줄 알았으나 내숭이 벗겨지며 왕왕짖고 자기표현이 점점
+                                                강해지는 똥꼬발랄 강아지로 변신중</p>
+
+                                            <div class="meta">
+                                                <span class="comment_count"><i
+                                                        class="fa-regular fa-comment"></i>0</span>
+                                                <span class="like_count"><i class="fa-regular fa-heart"></i>0</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="thumb">
+                                            <img src="asset/img/thumb01.jpg" alt="몰티">
+                                        </div>
+                                    </a>
+                                </article>
+                            </div>
+
+                            <div class="story_item">
+                                <article class="story_card">
+                                    <a class="card_link" href="#">
+                                        <div class="card_text">
+                                            <div class="profile">
+                                                <span class="profile_img" aria-hidden="true"></span>
+                                                <div class="profile_info">
+                                                    <strong class="name">자가낸내</strong>
+                                                    <span class="sub">루이 입양기</span>
+                                                </div>
+                                            </div>
+
+                                            <h3 class="title">사랑받을 일만 남은 루이</h3>
+                                            <p class="desc">작년 12월 8일에 만나서 이제는 가족이 된 사랑스러운 아기천사 루이 입양 후기예요😍 지금의 모습과는 너무
+                                                다른 공고 사진이었지만 보자마자 얘다! 싶었던 루이가 집에 온 지 두 달이 되었어요 사실 루이의 공고를 처음 본 건 약 세 달
+                                                전이었는데 가족들은 좀 더 작은 강아지를 원해서 다른 지역 보호소에 직접 가서 아이들을 보기도 했어요 그런데도 이 아기천사가 계속
+                                                눈에 아른거렸던 거 같아요 혹시 입양이 되었을까 마음 졸이며 매일 공고를 확인하고 일단 보러가자고 가족들을 설득해서 루이를 처음
+                                                만난 순간 확신이 들었어요! 이 아기천사의 평생을 책임지고 행복하게 만들어주고 싶었어요♡ 동물을 좋아하지만 이별이 두려웠던 저는
+                                                절대 강아지를 데려오지 않겠다고 마음을 먹었었지만 루이를 보고 이 아이의 세상을 내가 바꿔주고 싶다는 생각에 당일 입양을 하게
+                                                되었어요 그렇게 저희 집에 오게 된 루이는 처음부터 자기 집이였던 것처럼 제일 먼저 집으로 달려들어가고 편안하게 누워서 잠을
+                                                잤어요 ㅋㅋㅋ 2개월이 지나고 쓰는 후기라 너무 많은 일이 있었는데 글재주도 없고 글이 길어질 거 같아서🤐🤐</p>
+
+                                            <div class="meta">
+                                                <span class="comment_count"><i
+                                                        class="fa-regular fa-comment"></i>3</span>
+                                                <span class="like_count"><i class="fa-regular fa-heart"></i>47</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="thumb">
+                                            <img src="asset/img/thumb02.png" alt="">
+                                        </div>
+                                    </a>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="line02">
+                            <div class="story_item">
+                                <article class="story_card">
+                                    <a class="card_link" href="#">
+                                        <div class="card_text">
+                                            <div class="profile">
+                                                <span class="profile_img" aria-hidden="true"></span>
+                                                <div class="profile_info">
+                                                    <strong class="name">아롤롤로</strong>
+                                                    <span class="sub">안녕하세요! 아로누나예요</span>
+                                                </div>
+                                            </div>
+
+                                            <h3 class="title">저희집 막냉이 아로에요 🐾💗🏠</h3>
+                                            <p class="desc">우연히 보호센터를 방문한 날, 여러 아이들을 둘러보던 중 한 아이의 사랑스러운 눈빛에 홀린 듯 계속 쳐다보게
+                                                되었어요. 저희 가족은 1년 전부터 입양을 계획하고 있었지만, 급하게 데려오기보다는 천천히 용품과 준비를 하고 있었어요. 제가
+                                                먼저 홀린 듯 아로 사진을 가족분들께 보내드렸고, 그 후 가족분들이 아로를 보러 오셨는데, 그 순간만큼은 이 아이다!라는 느낌이
+                                                들었다고 하셨대요. 보호소에서 지어주신 아로(我路)라는 이름도 그대로 이어가기로 했어요! 나의 길을 함께 걷는 존재, 마음을
+                                                이어주는 존재 라는 의미가 담겨 있답니다! 아로는 부르면 달려와 푹 안기고, 사랑스러운 눈빛으로 바라보는 저희집 막냉이에요 🐾
+                                                현재 아로는 새로운 환경이 낯설어 낑낑거리기도 하고, 호기심 가득한 눈빛으로 이곳저곳 탐색하며 다니고 있어요. 앞으로 함께 산책도
+                                                가고, 이곳저곳 여행도 다니며 아로와 행복한 삶을 보내려고 합니다 🏠💗</p>
+
+                                            <div class="meta">
+                                                <span class="comment_count"><i
+                                                        class="fa-regular fa-comment"></i>5</span>
+                                                <span class="like_count"><i class="fa-regular fa-heart"></i>29</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="thumb">
+                                            <img src="asset/img/thumb03.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </article>
+                            </div>
+
+                            <div class="story_item">
+                                <article class="story_card">
+                                    <a class="card_link" href="#">
+                                        <div class="card_text">
+                                            <div class="profile">
+                                                <span class="profile_img" aria-hidden="true"></span>
+                                                <div class="profile_info">
+                                                    <strong class="name">너울이</strong>
+                                                    <span class="sub">천재견 너울이</span>
+                                                </div>
+                                            </div>
+
+                                            <h3 class="title">4차 접종 하고 왔어요(종합 4차,켄넬로프)</h3>
+                                            <p class="desc">천재견 스트릿보이 너울이 2주차 2.8kg->3.2kg 배변훈련,앉아,엎드려,손,하이파이브 완벽합니다.
+                                                기다려, 돌아는 연습중입니다. 온갖것 다 뜯어먹는데 내장은 괜찮은가요?이빨은 괜찮은가요? 좋아하는 장난감은 너덜너덜해서 가루가?
+                                                떨어지는데 버리는거죠?? 그리고 비닐하우스 옆에서 발견됐다는대 현관문만 나서면 덜덜덜 떨어요.실외에 나가는 연습이 필요한지
+                                                몰랐어요.산책하며 ”우리도 댕댕이 있다!“하려고 했는데 드라이브,산책을 싫어하는 댕댕이일까봐 걱정이 돼요. 켄넬은 자꾸 토를해서
+                                                슬링으로 바꿨어요. 그래도 쌤께서 켄넬 연습을 계속 시켜야된대요. 2주뒤에 또 올게요🐶</p>
+
+                                            <div class="meta">
+                                                <span class="comment_count"><i
+                                                        class="fa-regular fa-comment"></i>12</span>
+                                                <span class="like_count"><i class="fa-regular fa-heart"></i>28</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="thumb">
+                                            <img src="asset/img/thumb04.jpg" alt="썸네일">
+                                        </div>
+                                    </a>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn">
+                        <a href="#" class="more_btn">
+                            <span class="more_text">스토리 더보기</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="company">
+                <div class="inner">
+                    <div class="block_title">
+                        <div class="title_wrap">
+                            <div class="title_row">
+                                <h2 class="title_heading">어바웃 포인핸드</h2>
+                                <span class="vector" aria-hidden="true"></span>
+                            </div>
+                            <p class="title_sub">기술과 진심으로 유기동물 입양의 기준을 만들어갑니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="com_slide">
+                        <div class="com_item com_item_01">
+                            <button type="button" class="com_btn">
+                                <div class="com_inline">
+                                    <div class="com_number"><span>01</span></div>
+                                    <p class="com_metric">The Smartest Choice</p>
+                                    <div class="com_detail">
+                                        <span class="com_sub_title">The Smartest Choice</span>
+                                        <p class="com_copy">유기동물 입양 문화를 바꾸는<br> 가장 똑똑하고 선한 선택</p>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="com_item com_item_02">
+                            <button type="button" class="com_btn">
+                                <div class="com_inline">
+                                    <div class="com_number"><span>02</span></div>
+                                    <p class="com_metric">120K+ Adoptions</p>
+                                    <div class="com_detail">
+                                        <span class="com_sub_title">120K+ Adoptions</span>
+                                        <p class="com_copy">12만 번의 입양이<br> 만들어낸 변화</p>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="com_item com_item_03">
+                            <button type="button" class="com_btn">
+                                <div class="com_inline">
+                                    <div class="com_number"><span>03</span></div>
+                                    <p class="com_metric">4K+ Reunited</p>
+                                    <div class="com_detail">
+                                        <span class="com_sub_title">4K+ Reunited</span>
+                                        <p class="com_copy">4천 건 이상의<br>실종 반려동물 재회</p>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="com_item com_item_04">
+                            <button type="button" class="com_btn">
+                                <div class="com_inline">
+                                    <div class="com_number"><span>04</span></div>
+                                    <p class="com_metric">295 Shelters Nationwide</p>
+                                    <div class="com_detail">
+                                        <span class="com_sub_title">295 Shelters Nationwide</span>
+                                        <p class="com_copy">전국 295개<br>보호소와 연결</p>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="com_item com_item_05">
+                            <button type="button" class="com_btn">
+                                <div class="com_inline">
+                                    <div class="com_number"><span>05</span></div>
+                                    <p class="com_metric">1M+ Pet Owners</p>
+                                    <div class="com_detail">
+                                        <span class="com_sub_title">1M+ Pet Owners</span>
+                                        <p class="com_copy">100만 반려인이<br>함께하는 포인핸드</p>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer id="footer">
+                <div class="inner">
+                    <div class="footer_inner">
+                        <div class="footer_left">
+                            <h2 class="logo"><a href="#">pawinhand</a></h2>
+                            <div class="company_info">
+                                <p><span>대표자</span> 이환희 | <span>사업자번호</span> 322-87-00895</p>
+                                <p><span>주소</span> 서울특별시 마포구 대흥로 67</p>
+                                <p><span>데이터 제공</span> 농림축산식품부</p>
+                            </div>
+                            <div class="footer_contact">
+                                <p><span>이메일</span> pawinhand@naver.com</p>
+                                <p><span>대표전화</span> 02-6956-6242</p>
+                            </div>
+                        </div>
+                        <div class="footer_right">
+                            <div class="footer_sns">
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                <a href="#"><i class="fa-solid fa-comment"></i></a>
+                                <a href="#"><i class="fa-solid fa-bold"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_bottom">
+                        <div class="bottom_inner">
+                            <div class="bottom_left">
+                                <a href="#" class="policy">개인정보처리방침</a>
+                                <p class="copy">©Pawinhand all right reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/common.js"></script>
+</body>
+
+</html>

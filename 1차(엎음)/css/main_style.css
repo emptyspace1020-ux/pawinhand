@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+.main .cont {
+    min-height: 100vh;
+    background: url('../img/main_4x.jpg') no-repeat center center / cover;
+}
+
+.pawinhand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.pawinhand span {
+    font-size: 15vw;
+    color: var(--real_white);
+    font-family: "Covered By Your Grace", cursive;
+    opacity: 0.7;
+}

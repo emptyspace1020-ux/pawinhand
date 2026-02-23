@@ -1,0 +1,26 @@
+0212 오늘할일 : 헤더푸터 html짜기
+
+[파일이름 작성법] 필요한 각 페이지마다 이름부여
+ex)
+index.html(필수) - main.css / main_media.css / main.js
+info.html - info.css / info_media.css/ info.js
+product.html 
+
+reset.css(필수)
+common.css (헤더,푸터 등 공통적으로 쓸 것)
+common_media.css (미디어쿼리 분리 시 사용 / 분리안하고 common.css 아래 때려박을수도 있습니다.)
+
+common.js (필수)
+
+[사이즈 줄 때 주의사항]
+1. 사이즈 웬만하면 부모값에 주고 자식에 100% 주세요.
+2. 가로값은 최대한 %로 주기 (px로 주는순간 나중에 가로스크롤 생깁니다)
+3. 100vw 쓰지마세요 (마찬가지로 스크롤 생깁니다)
+4. 전체 wrap에 padding 걸고 시작하면 안됩니다
+5. 가장 큰 컨테이너 (cn_intro) > 그 아래(inner) <얘 박스크기 자체를 조정하세요
+
+[section 나눌때]
+각 콘텐츠는 section으로 나눕니다.
+<section class="피그마에_부여된_콘텐츠박스_이름"></section>
+ex><section class="cn_intro"></section>
+
