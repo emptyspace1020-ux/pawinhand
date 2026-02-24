@@ -301,9 +301,17 @@
 
 .card .tag {
     display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: nowrap;
     gap: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.card .tag::-webkit-scrollbar {
+    display: none;
 }
 
 .card .tag .tag_box {
@@ -311,6 +319,7 @@
     height: 32px;
     padding: 0 10px;
     flex-direction: column;
+    flex: 0 0 auto;
     justify-content: center;
     align-items: center;
     border-radius: 999px;
