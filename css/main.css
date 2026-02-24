@@ -53,12 +53,12 @@
 }
 
 .main_banner .inner {
-    position: relative;
-    z-index: 2;
     height: 100%;
     display: flex;
     align-items: center;
-    transform: translateY(40px);
+    justify-content: flex-end;
+    position: relative;
+    z-index: 3;
 }
 
 .main_banner .banner_text {
@@ -81,15 +81,24 @@
 }
 
 .hero_copy {
-    position: absolute;
-    right: clamp(20px, 6vw, 80px);
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3;
     text-align: right;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+@media (max-width: 1200px) {
+    .hero_copy {
+        right: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero_copy {
+        right: 24px;
+        left: 24px;
+        text-align: left;
+    }
 }
 
 .hero_line {
