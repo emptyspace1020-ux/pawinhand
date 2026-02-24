@@ -144,6 +144,18 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             onScroll();
+
+            const handleHeaderBg = () => {
+                const y = window.scrollY || 0;
+                if (y > window.innerHeight - 80) {
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
+            };
+
+            window.addEventListener("scroll", handleHeaderBg, { passive: true });
+            handleHeaderBg();
         }
     }
 
