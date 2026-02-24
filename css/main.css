@@ -24,6 +24,17 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+#header:hover {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.main_video.is_active {
+    opacity: 1;
 }
 
 .main_banner .banner_bg {

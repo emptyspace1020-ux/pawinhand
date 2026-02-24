@@ -825,5 +825,46 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     initMissingLoop();
+    const videoA = document.querySelector(".video_a");
+    const videoB = document.querySelector(".video_b");
 
+    if (videoA && videoB) {
+        const src = "../asset/video/main_video.mp4";
+
+        videoA.src = src;
+        videoB.src = src;
+
+        let active = videoA;
+        let next = videoB;
+
+        const playActive = () => {
+            active.classList.add("is_active");
+            active.currentTime = 0;
+            const p = active.play();
+            if (p && typeof p.catch === "function") p.catch(() => { });
+        };
+
+        const swap = () => {
+            next.currentTime = 0;
+            const p = next.play();
+            if (p && typeof p.catch === "function") p.catch(() => { });
+
+            next.classList.add("is_active");
+            active.classList.remove("is_active");
+
+            const temp = active;
+            active = next;
+            next = temp;
+        };
+
+        videoA.addEventListener("ended", () => {
+            if (active === videoA) swap();
+        });
+
+        videoB.addEventListener("ended", () => {
+            if (active === videoB) swap();
+        });
+
+        playActive();
+    }
 });
