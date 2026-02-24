@@ -867,4 +867,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         playActive();
     }
+
+    const videos = document.querySelectorAll(".main_video");
+    videos.forEach(v => {
+        v.playbackRate = 0.85;
+    });
 });
