@@ -452,7 +452,7 @@ html {
 .block_title .title_wrap {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 22px;
 }
 
 .block_title .title_row {
