@@ -16,7 +16,9 @@
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
+    font-family: pretendard variable, pretendard, sans-serif;
     scroll-behavior: smooth;
 }
 
