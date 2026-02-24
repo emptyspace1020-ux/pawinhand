@@ -627,6 +627,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             );
         });
+        const missingcards = gsap.utils.toArray(".missing_container > a");
+
+        if (missingcards.length) {
+            gsap.set(missingcards, { y: 40, opacity: 0, scale: 0.985 });
+
+            gsap.to(missingcards, {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 0.9,
+                ease: "power3.out",
+                stagger: 0.14,
+                scrollTrigger: {
+                    trigger: ".missing_container",
+                    start: "top 82%",
+                    toggleActions: "play none none none",
+                    once: true
+                }
+            });
+        }
+
     } else {
         document.querySelectorAll(".block_title .title_heading, .block_title .title_sub").forEach((el) => {
             el.style.opacity = "1";
@@ -654,13 +675,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const initRecommendSlider = () => {
         const track = document.querySelector(".recommend_track");
-        const prevBtn = document.querySelector(".slide_btn .prev");
-        const nextBtn = document.querySelector(".slide_btn .next");
+        const section = document.querySelector(".recommend");
+        if (!track || !section) return;
 
-        if (!track) return;
+        const prevBtn = section.querySelector(".slide_btn .prev");
+        const nextBtn = section.querySelector(".slide_btn .next");
 
         const originalCards = Array.from(track.children);
         const originalCount = originalCards.length;
+        if (originalCount === 0) return;
 
         originalCards.forEach(card => {
             track.appendChild(card.cloneNode(true));
@@ -674,6 +697,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const move = () => {
             track.style.transform = `translateX(-${currentIndex * step}px)`;
+            track.style.transition = "transform 0.4s ease";
         };
 
         nextBtn?.addEventListener("click", () => {
@@ -697,13 +721,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 currentIndex = originalCount;
                 move();
                 track.offsetHeight;
-                track.style.transition = "transform 0.4s ease";
             }
-
             currentIndex--;
             move();
         });
     };
 
-    window.addEventListener("load", initRecommendSlider);
+    window.addEventListener("load", () => {
+        initRecommendSlider();
+    });
 });
