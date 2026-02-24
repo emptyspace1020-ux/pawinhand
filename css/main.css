@@ -1205,6 +1205,11 @@
 }
 
 /* company */
+.company,
+.company * {
+    font-family: "Pretendard Variable", "Pretendard", sans-serif;
+}
+
 .company {
     display: flex;
     padding-bottom: 150px;
