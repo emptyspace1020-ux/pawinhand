@@ -926,6 +926,51 @@
     color: #fff;
     text-decoration: none;
     overflow: hidden;
+    transition: transform 0.4s cubic-bezier(.2, .85, .15, 1), filter 0.4s cubic-bezier(.2, .85, .15, 1);
+    will-change: transform;
+}
+
+.missing_container a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(.2, .85, .15, 1);
+    z-index: 0;
+}
+
+.missing_card01::before {
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 33.38%, rgba(0, 0, 0, 0.8) 100.19%),
+        url("../asset/img/missing_img01.jpg") center/cover no-repeat;
+}
+
+.missing_card02::before {
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 33.38%, rgba(0, 0, 0, 0.8) 100.19%),
+        url("../asset/img/missing_img02.jpg") center/cover no-repeat;
+}
+
+.missing_card03::before {
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 33.38%, rgba(0, 0, 0, 0.8) 100.19%),
+        url("../asset/img/missing_img03.jpg") center/cover no-repeat;
+}
+
+.missing_card04::before {
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0) 33.38%, rgba(0, 0, 0, 0.8) 100.19%),
+        url("../asset/img/missing_img04.jpg") center/cover no-repeat;
+}
+
+.missing_container a:hover::before {
+    transform: scale(1.08);
+}
+
+.missing_container a>* {
+    position: relative;
+    z-index: 1;
 }
 
 .missing_bottom {

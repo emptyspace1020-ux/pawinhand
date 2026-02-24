@@ -730,4 +730,88 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("load", () => {
         initRecommendSlider();
     });
+    const initMissingLoop = () => {
+        const container = document.querySelector(".missing_container");
+        const section = document.querySelector(".missing");
+        if (!container || !section) return;
+
+        const prevBtn = section.querySelector(".slide_btn .prev");
+        const nextBtn = section.querySelector(".slide_btn .next");
+
+        let track = container.querySelector(".missing_track");
+
+        if (!track) {
+            track = document.createElement("div");
+            track.className = "missing_track";
+
+            while (container.firstChild) {
+                track.appendChild(container.firstChild);
+            }
+            container.appendChild(track);
+        }
+
+        track.style.display = "flex";
+        track.style.gap = getComputedStyle(container).gap || "16px";
+        track.style.willChange = "transform";
+
+        let isAnimating = false;
+
+        const getStep = () => {
+            const card = track.children[0];
+            if (!card) return 0;
+            const cardWidth = card.getBoundingClientRect().width;
+            const gap = parseFloat(getComputedStyle(track).gap) || 16;
+            return cardWidth + gap;
+        };
+
+        const animate = (dir) => {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const step = getStep();
+            if (!step) {
+                isAnimating = false;
+                return;
+            }
+
+            track.style.transition = "transform 0.35s ease";
+            track.style.transform = `translateX(${dir * -step}px)`;
+
+            const onEnd = () => {
+                track.removeEventListener("transitionend", onEnd);
+
+                if (dir === 1) {
+                    const first = track.firstElementChild;
+                    if (first) track.appendChild(first);
+                } else {
+                    const last = track.lastElementChild;
+                    if (last) track.prepend(last);
+                }
+
+                track.style.transition = "none";
+                track.style.transform = `translateX(0px)`;
+
+                requestAnimationFrame(() => {
+                    isAnimating = false;
+                });
+            };
+
+            track.addEventListener("transitionend", onEnd);
+        };
+
+        nextBtn?.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            animate(1);
+        });
+
+        prevBtn?.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            animate(-1);
+        });
+    };
+
+    initMissingLoop();
+
 });
