@@ -1,0 +1,10 @@
+git add .
+git commit -m "0224 backup"
+git push
+
+before change main - adf0d54
+add main - 731fe56
+main video loop - dc6dccf
+main_add txt - 3faaf21
+main_add txt - b45fdd1
+ 
