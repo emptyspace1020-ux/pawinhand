@@ -1,0 +1,10 @@
+{
+  "name": "typescript-8h",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit --lib ES2022,DOM src/01-basic-errors.good.ts src/05-async-basic.good.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  }
+}
